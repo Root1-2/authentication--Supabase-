@@ -9,8 +9,8 @@ export function useLogin() {
   const { mutate: login, isPending } = useMutation({
     mutationFn: ({ email, password }) => loginApi({ email, password }),
     onSuccess: (user) => {
-      queryClient.setQueriesData(["user"], user);
-      navigate("/homepage");
+      queryClient.setQueryData(["user"], user.user);
+      navigate("/homepage", { replace: true });
     },
     onError: () => {
       toast.error("Provided email or password are invalid");
