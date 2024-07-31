@@ -1,6 +1,6 @@
 // Email regex: /\S+@\S+\.\S+/
 
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Button from "../ui/Button";
 import Form from "../ui/Form";
@@ -9,7 +9,7 @@ import Input from "../ui/Input";
 import { useSignUp } from "../services/useSignUp";
 
 function SignupForm() {
-  const { signUp, isLoading } = useSignUp();
+  const { signUp, isPending } = useSignUp();
   const { register, formState, getValues, handleSubmit, reset } = useForm();
   const { errors } = formState;
 
