@@ -11,6 +11,7 @@ import AppLayout from "./components/AppLayout";
 import Homepage from "./Pages/Homepage";
 import Login from "./Pages/Login";
 import PageNotFound from "./Pages/PageNotFound";
+import SignUp from "./Pages/SignUp";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,6 +39,7 @@ function App() {
             <Route path="homepage" element={<Homepage />} />
           </Route>
           <Route path="login" element={<Login />} />
+          <Route path="signup" element={<SignUp />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
